@@ -75,6 +75,7 @@ function load(file, clb) {
         // img.src = reader.result;
         // console.log(reader.result)
         inputImg = createImg(reader.result).parent('styleA');
+        statusMsg.html('Applying Style Transfer...!');
         console.log(inputImg)
         setTimeout(function() { transferImages(clb) }, 100)
     }
@@ -83,7 +84,6 @@ function load(file, clb) {
 
 // Apply the transfer to both images!
 function transferImages(clb) {
-    statusMsg.html('Applying Style Transfer...!');
 
     style1.transfer(inputImg, function(err, result) {
         // console.log("rsult", result)
